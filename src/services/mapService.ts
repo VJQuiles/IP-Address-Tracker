@@ -1,6 +1,8 @@
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+// import L from 'leaflet'
+// import 'leaflet/dist/leaflet.css'
 
+
+declare const L: any
 let map: L.Map
 let marker: L.Marker
 
@@ -21,9 +23,7 @@ export function loadMap(): void {
     console.log('is this thing on?')
 }
 
-window.addEventListener('load', () => {
-    console.log('maybe this will work?')
-})
+window.addEventListener('load', loadMap)
 
 // export function updateMap(lat: number, lng: number): void {
 //     if (map && marker) {

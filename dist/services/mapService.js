@@ -1,5 +1,5 @@
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
+// import L from 'leaflet'
+// import 'leaflet/dist/leaflet.css'
 let map;
 let marker;
 export function loadMap() {
@@ -13,9 +13,7 @@ export function loadMap() {
         .openPopup();
     console.log('is this thing on?');
 }
-window.addEventListener('load', () => {
-    console.log('maybe this will work?');
-});
+window.addEventListener('load', loadMap);
 // export function updateMap(lat: number, lng: number): void {
 //     if (map && marker) {
 //         map.setView([lat, lng], 10)
