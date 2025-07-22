@@ -13,6 +13,4 @@ export function loadMap() {
         .openPopup();
     console.log('is this thing on?');
 }
-window.addEventListener('load', () => {
-    console.log('maybe this will work?');
-});
+window.addEventListener('load', loadMap);
