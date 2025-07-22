@@ -11,7 +11,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/leaflet": "^1.9.20",
     "@types/node": "^24.0.15",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
   }
 }

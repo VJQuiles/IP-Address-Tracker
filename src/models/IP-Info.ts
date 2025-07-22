@@ -30,5 +30,5 @@ export class Location {
     }
 }
 
-const location1 = new Location('s', 's', 's', 3, 4, 'd', 't')
-console.log(location1.displayIPDetails()) 
+// const location1 = new Location('s', 's', 's', 3, 4, 'd', 't')
+// console.log(location1.displayIPDetails()) 
