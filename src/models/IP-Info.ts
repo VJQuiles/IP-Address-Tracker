@@ -1,4 +1,4 @@
-export class Location {
+export default class Location {
     ip: string
     country: string
     city: string

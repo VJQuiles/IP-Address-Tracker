@@ -1,7 +1,3 @@
-// import L from 'leaflet'
-// import 'leaflet/dist/leaflet.css'
-
-
 declare const L: any
 let map: L.Map
 let marker: L.Marker
