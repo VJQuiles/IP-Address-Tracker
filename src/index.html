@@ -19,6 +19,13 @@
       type="image/x-icon"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Happy+Monkey&family=Just+Another+Hand&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -49,31 +56,27 @@
 
   <body>
     <div id="main-container">
-      <div
-        id="header-container
-        "
-      >
-        <header>
-          <h2>IP Address Tracker</h2>
-        </header>
-      </div>
-
       <main>
         <div id="form-container">
-          <form id="ip-domain-input">
-            <input
-              id="user-input"
-              type="text"
-              placeholder="Enter any IP address or domain"
-            />
-            <button id="search-btn" type="submit">
-              <img src="./assets/images/icon-arrow.svg" />
-            </button>
-          </form>
+          <div id="header-container">
+            <h4>IP Address Tracker</h4>
+          </div>
+          <div id="form-elements">
+            <form id="ip-domain-input">
+              <input
+                id="user-input"
+                type="text"
+                placeholder="Enter any IP address or domain"
+              />
+              <button id="search-btn" type="submit">
+                <img src="./assets/images/icon-arrow.svg" />
+              </button>
+            </form>
+          </div>
         </div>
 
         <div id="results-display-container">
-          <div class="info-container">
+          <div id="first-info-container">
             <h4 class="info-title">IP Address</h4>
             <span id="ip-display">192.212.174.101</span>
           </div>
@@ -91,7 +94,7 @@
           </div>
         </div>
 
-        <!-- <div id="map"></div> -->
+        <div id="map"></div>
       </main>
 
       <div class="attribution">
