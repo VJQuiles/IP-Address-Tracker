@@ -14,6 +14,12 @@
     <title>IP Address Tracker</title>
 
     <link
+      rel="icon"
+      href="/src/assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -42,16 +48,61 @@
   </head>
 
   <body>
-    <div id="map"></div>
-  </body>
+    <div id="main-container">
+      <div
+        id="header-container
+        "
+      >
+        <header>
+          <h2>IP Address Tracker</h2>
+        </header>
+      </div>
 
-  <div class="attribution">
-    Challenge by
-    <a
-      rel="noopener"
-      href="https://www.frontendmentor.io?ref=challenge"
-      target="_blank"
-      >Frontend Mentor </a
-    >. Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <main>
+        <div id="form-container">
+          <form id="ip-domain-input">
+            <input
+              id="user-input"
+              type="text"
+              placeholder="Enter any IP address or domain"
+            />
+            <button id="search-btn" type="submit">
+              <img src="./assets/images/icon-arrow.svg" />
+            </button>
+          </form>
+        </div>
+
+        <div id="results-display-container">
+          <div class="info-container">
+            <h4 class="info-title">IP Address</h4>
+            <span id="ip-display">192.212.174.101</span>
+          </div>
+          <div class="info-container">
+            <h4 class="info-title">Location</h4>
+            <span id="city-display">Philadelphia, PA 19145</span>
+          </div>
+          <div class="info-container">
+            <h4 class="info-title">Timezone</h4>
+            <span id="timezone-display">UTC -05:00</span>
+          </div>
+          <div class="info-container">
+            <h4 class="info-title">ISP</h4>
+            <span id="champion-display">SB59</span>
+          </div>
+        </div>
+
+        <!-- <div id="map"></div> -->
+      </main>
+
+      <div class="attribution">
+        Challenge by
+        <a
+          rel="noopener"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor </a
+        >. Coded by <a href="#">Vince Quiles</a>.
+      </div>
+    </div>
+  </body>
 </html>
