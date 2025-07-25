@@ -4,7 +4,7 @@ import { ValidationError, NetworkError, DataError } from '../utils/errorHandler.
 export async function fetchIPData(): Promise<Location> {
 
     const baseURL = "https://geo.ipify.org/api/v1"
-    const ipApiKey = '??'
+    const ipApiKey = 'at_WvlbZcSv1OMMbQchqfKbWzMToWPHH'
     const ip = '8.8.8.8'
     const url = `${baseURL}?apiKey=${ipApiKey}&ipAddress=${ip}`
 
