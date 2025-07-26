@@ -19,5 +19,3 @@ export default class Location {
         return `IP-Address: ${this.ip}, Country: ${this.country}, City: ${this.city}, Latitude: ${this.lat}, Longitude: ${this.lng}, Timezone: ${this.timezone}, ISP: ${this.isp}`;
     }
 }
-// const location1 = new Location('s', 's', 's', 3, 4, 'd', 't')
-// console.log(location1.displayIPDetails()) 
