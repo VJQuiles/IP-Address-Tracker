@@ -1,14 +1,11 @@
 import { domCache } from "./models/domCache.js"
 import { fetchIPData } from "./services/ipApiService.js"
-import Location from "./models/IP-Info.js"
-import { ValidationError, validateData } from "./utils/errorHandler.js"
+import { validateData, validateInput } from "./utils/errorHandler.js"
 import { loadMap, updateMap } from "./services/mapService.js"
 
-export async function doTheThing() {
+window.addEventListener('load', loadMap)
 
-    window.addEventListener('load', loadMap)
-
-    const userInput = "8.8.8.8"
+export async function doTheThing(userInput: string) {
 
     try {
         const ipData = await fetchIPData(userInput)
@@ -20,10 +17,29 @@ export async function doTheThing() {
     catch (e) {
         console.error(e)
     }
-
 }
 
-doTheThing()
+domCache.ipForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const userInput = domCache.userInput.value.trim()
+
+    try {
+        validateInput(userInput)
+        doTheThing(userInput)
+    }
+    catch (e) {
+        console.error(e)
+    }
+
+    domCache.userInput.value = ''
+})
+
+
+
+
+
+
 
 
 
