@@ -13,19 +13,18 @@ export function loadMap(): void {
     }).addTo(map);
 
     marker = L.marker([39.900833, -75.1675]).addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        .bindPopup('Home of the Super Bowl Champs baby, GO BIRDS 🦅')
         .openPopup();
 
     console.log('is this thing on?')
 }
 
-window.addEventListener('load', loadMap)
+export function updateMap(lat: number, lng: number, popupText: string): void {
 
-// export function updateMap(lat: number, lng: number): void {
-//     if (map && marker) {
-//         map.setView([lat, lng], 10)
-//         marker.setLatLng([lat, lng])
-//     } else {
-//         console.error('something aint working kid')
-//     }
-// }
+    if (map && marker) {
+        map.setView([lat, lng], 10)
+        marker.setLatLng([lat, lng]).bindPopup(popupText).openPopup()
+    } else {
+        console.error('something aint working kid')
+    }
+}

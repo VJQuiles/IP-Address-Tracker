@@ -7,16 +7,16 @@ export function loadMap() {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     }).addTo(map);
     marker = L.marker([39.900833, -75.1675]).addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        .bindPopup('Home of the Super Bowl Champs baby, GO BIRDS 🦅')
         .openPopup();
     console.log('is this thing on?');
 }
-window.addEventListener('load', loadMap);
-// export function updateMap(lat: number, lng: number): void {
-//     if (map && marker) {
-//         map.setView([lat, lng], 10)
-//         marker.setLatLng([lat, lng])
-//     } else {
-//         console.error('something aint working kid')
-//     }
-// }
+export function updateMap(lat, lng, popupText) {
+    if (map && marker) {
+        map.setView([lat, lng], 10);
+        marker.setLatLng([lat, lng]).bindPopup(popupText).openPopup();
+    }
+    else {
+        console.error('something aint working kid');
+    }
+}

@@ -1,11 +1,10 @@
 import Location from '../models/IP-Info.js'
 import { ValidationError, NetworkError, DataError } from '../utils/errorHandler.js'
 
-export async function fetchIPData(): Promise<Location> {
+export async function fetchIPData(ip: string): Promise<Location> {
 
     const baseURL = "https://geo.ipify.org/api/v1"
-    const ipApiKey = 'at_WvlbZcSv1OMMbQchqfKbWzMToWPHH'
-    const ip = '8.8.8.8'
+    const ipApiKey = '??'
     const url = `${baseURL}?apiKey=${ipApiKey}&ipAddress=${ip}`
 
     try {
@@ -17,7 +16,16 @@ export async function fetchIPData(): Promise<Location> {
         if (typeof ipData !== 'object' || ipData === null) {
             throw new DataError('Data Error!')
         }
-        return ipData.location
+        const location = new Location(
+            ipData.ip,
+            ipData.location.country,
+            ipData.location.city,
+            ipData.location.lat,
+            ipData.location.lng,
+            ipData.location.timezone,
+            ipData.isp
+        )
+        return location
     }
     catch (error) {
         if (error instanceof ValidationError || error instanceof NetworkError || error instanceof DataError) {
@@ -27,6 +35,6 @@ export async function fetchIPData(): Promise<Location> {
     }
 }
 
-fetchIPData()
-    .then((location) => console.log(location))
-    .catch((error) => console.error(error))
+// fetchIPData()
+//     .then((location) => console.log(location))
+//     .catch((error) => console.error(error))
