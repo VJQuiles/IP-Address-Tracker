@@ -23,11 +23,6 @@ export function validateInput(input: string) {
     const ipRegex = /^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/
     const domainRegex = /^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.[A-Za-z]{2,6})+$/
 
-    const inputCheck = input.trim()
-    console.log("Validating input:", inputCheck)
-    console.log("IP test:", ipRegex.test(inputCheck))
-    console.log("Domain test:", domainRegex.test(inputCheck))
-
     if (input.trim() === '') {
         throw new ValidationError('Hey buddy! Whaddya doin? You gotta write somethin!')
     } else if (!ipRegex.test(input) && !domainRegex.test(input)) {
