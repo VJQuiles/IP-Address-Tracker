@@ -35,6 +35,3 @@ export async function fetchIPData(ip: string): Promise<Location> {
     }
 }
 
-// fetchIPData()
-//     .then((location) => console.log(location))
-//     .catch((error) => console.error(error))
